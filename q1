@@ -1,0 +1,371 @@
+
+# Q1
+
+Méthode Soustraire(A,B) (retourne la valeur de A-B)
+
+Écrire 25 tests unitaire pour cette méthode en essayant de couvrir un maximum de cas.
+
+test Soustraire(A, B) return une difference 
+verifier Soustraire(1,1) return 0
+verifier Soustraire(0,0) return 0
+verifier Soustraire(-1,1) return -2
+verifier Soustraire(10,(-1)) return 11
+verifier avec INT_MAX Soustraire(10-10-2147483900) return non pas 2147483890 mais depassement de INT_MIN
+verifier Soustraire(1,5) return -4
+verifier Soustraire(5,1) return 4
+verifier Soustraire(7,6) return 1
+verifier Soustraire(4,4) return 0
+verifier Soustraire(5,10) return -5
+verifier Soustraire(3,1) return 2
+verifier Soustraire(4,1) return 3
+verifier Soustraire(5,1) return 4
+verifier Soustraire(10,1) return 9
+verifier Soustraire(25,1) return 24
+verifier Soustraire(24,1) return 23
+verifier Soustraire(100,100) return 0
+verifier Soustraire(10,10) return 0
+verifier Soustraire(10,2) return 8
+verifier Soustraire(2,10) return -8
+verifier Soustraire(30,1) return 29
+verifier Soustraire(20,1) return 19
+verifier Soustraire(19,1) return 18
+verifier Soustraire(18,1) return 17
+verifier Soustraire(19,18) return 1
+
+
+---
+# Q2
+
+Est-il possible de couvrir tous les cas de figure ? Si oui comment, si non pourquoi ?
+
+oui il est possible de couvrir tous les cas de figure parce que une Soustraire(A, B) est une operation simple a deux decimales. nous sommes loin des operations complexe.
+depuis ce type d'operation arithmétique peut Soustraire tout les entiers. Il n'y a pas d'operation impossible comme dans le cas d'une division (exemple 1/0) 
+
+---
+
+# Q3
+
+Méthode Additionner(A,B) (retourne la valeur de A+B)
+
+Écrire un panel de tests unitaire pour cette méthode en essayant d'être exaustif.
+
+
+verifier Additionner(1,1) return 2
+verifier Additionner(0,0) return 0
+verifier Additionner(10,10) return 20
+verifier Additionner(-1,1) return 0
+verifier Additionner(4,1) return 5
+verifier Additionner(INT_MAX,INT_MAX) return exception depassement du tampon
+verifier Additionner(INT_MIN,INT_MIN) return exception depassement du tampon
+verifier Additionner(INT_MAX,INT_MIN) return 1
+
+
+---
+# Q4
+
+Méthode Diviser(A,B) (retournee la valeur de A/B)
+
+## Q4a
+
+Écrire un panel de tests unitaire pour cette méthode en essayant d'être exaustif.
+verifier Diviser(1,1) return 1
+verifier Diviser(0,0) return exception: division impossible
+verifier Diviser(10,10) return 1
+verifier Diviser(10,0) return exception: division impossible
+verifier Diviser(10,1) return 10
+verifier Diviser(INT_MAX,INT_MAX) return 1
+verifier Diviser(INT_MIN,INT_MIN) return 1
+verifier Diviser(INT_MAX,INT_MIN) return -1
+
+
+## Q4b
+Quels est la particularité de cette méthode par rapport aux précédentes ?
+
+la particularitéde la methode Diviser(A,B) est qu'elle divise des entier entre eux. Or l'operation arithmetique de division ne permet pas
+un certains nombre de cas limite. Exemple : division par 0, qui forcement leve une exception. Cette operation de division retourne normalement 
+infini, si on ne met pas en place une exception dans ce cas precis dans notre programme on risque de faire bugger la machine
+
+## Q4c
+
+Cela la rend elle moins testable ? Si oui pourquoi ? Sinon comment la tester ?
+
+cela ne rend pas la fonction de division moins testable mais elle leve plus d'exception. On peut tout tester 
+en levant des exceptions. 
+
+---
+
+# Q5
+
+Méthode Multiplier(A,B) (retournee la valeur de A*B)
+
+écrire un panel de tests unitaire pour cette méthode en essayant d'être exaustif.
+
+verifier Multiplier(1,1) return 1
+verifier Multiplier(50,1) return 50
+verifier Multiplier(1,0) return 0
+verifier Multiplier(50,0) return 0
+verifier Multiplier(10,10) return 100
+verifier Multiplier(10,-10) return -100
+verifier Multiplier(0,0) return 0
+
+---
+# Q6
+
+Écrire un programme qui affiche les nombres de 1 à 199. Mais pour les multiples de 3, 
+afficher “Fizz” au lieu du nombre et pour les multiples de 5 afficher “Buzz”. 
+Pour les nombres multiples de 3 et 5, afficher “FizzBuzz”.
+
+
+fonction AfficherNombreDeUnACentQuatreVingtDixNeuf() {
+    var n = 0
+    TANTQUE n < 199 FAIRE 
+
+    SI ( x % 3 != 0 ) && ( x % 5 != 0 )
+
+        print "FizzBuzz"
+
+    SINONSI (x % 3 == 0)
+
+        print "Fizz"
+
+    SINONSI (x % 5 == 0)
+
+        print "Buzz"
+
+    SINON 
+
+        print n
+
+    FINSI
+
+    n++
+
+    FINFAIRE 
+}
+
+
+## Q6a 
+
+Écrire un test pour le programme vérifiant que celui est bon
+
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "Fizz" au lieu de 3
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "Fizz" au lieu de 6
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "Fizz" au lieu de 12
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "Fizz" au lieu de 15
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "Fizz" au lieu de 66
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "Fizz" au lieu de 81
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "Fizz" au lieu de 177
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "Fizz" au lieu de 192
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "Fizz" au lieu de 195
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "“Buzz” au lieu de 5
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "“Buzz” au lieu de 10
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "“Buzz” au lieu de 15
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "“Buzz” au lieu de 25
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "“Buzz” au lieu de 100
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "“Buzz” au lieu de 115
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "“Buzz” au lieu de 145
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "“Buzz” au lieu de 130
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "“Buzz” au lieu de 180
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "“Buzz” au lieu de 190
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "“Buzz” au lieu de 195
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "“Buzz” au lieu de 90
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "FizzBuzz” au lieu de 90
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "FizzBuzz” au lieu de 15
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "FizzBuzz” au lieu de 30
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "FizzBuzz” au lieu de 45
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "FizzBuzz” au lieu de 90
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "FizzBuzz” au lieu de 60
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "FizzBuzz” au lieu de 75
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "FizzBuzz” au lieu de 105
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "FizzBuzz” au lieu de 120
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "FizzBuzz” au lieu de 135
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "FizzBuzz” au lieu de 150
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "FizzBuzz” au lieu de 165
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "FizzBuzz” au lieu de 180
+verifier AfficherNombreDeUnACentQuatreVingtDixNeuf() retourne "FizzBuzz” au lieu de 195
+
+
+
+## Q6b 
+
+Écrivez le programme FizzBuzz. Il doit comporter une méthode principale et au moins une méthode 
+interne qui prends en paramètre un nombre et retourne une chaine de caracteres.
+
+
+fonction AfficherNombreDeUnACentQuatreVingtDixNeuf() {
+    var n = 0
+    TANTQUE n < 199 FAIRE 
+
+    SI multiplede3et5(n) retourn boolean
+        print "FizzBuzz"
+    SINONSI (x % 3 == 0)
+        print "Fizz"
+    SINONSI (x % 5 == 0)
+        print "Buzz"
+    SINON 
+        print n
+    FINSI
+
+    n++
+
+    FINFAIRE 
+}
+
+
+
+---
+
+## Q6c 
+
+Écrire un pannel de tests unitaire pour la méthode interne en essayant de couvrir un maximum de cas.
+
+verifier multiplede3et5(n = 15) retourne "FizzBuzz” au lieu de 15 ou de true 
+verifier multiplede3et5(n = 30) retourne "FizzBuzz” au lieu de 30 ou de true 
+verifier multiplede3et5(n = 45) retourne "FizzBuzz” au lieu de 45 ou de true 
+verifier multiplede3et5(n = 60) retourne "FizzBuzz” au lieu de 60 ou de true 
+verifier multiplede3et5(n = 75) retourne "FizzBuzz” au lieu de 75 ou de true 
+verifier multiplede3et5(n = 105) retourne "FizzBuzz” au lieu de 105 ou de true 
+verifier multiplede3et5(n = 120) retourne "FizzBuzz” au lieu de 120 ou de true 
+verifier multiplede3et5(n = 135) retourne "FizzBuzz” au lieu de 135 ou de true 
+verifier multiplede3et5(n = 150) retourne "FizzBuzz” au lieu de 150 ou de true 
+verifier multiplede3et5(n = 165) retourne "FizzBuzz” au lieu de 165 ou de true 
+verifier multiplede3et5(n = 180) retourne "FizzBuzz” au lieu de 180 ou de true 
+verifier multiplede3et5(n = 195) retourne "FizzBuzz” au lieu de 195 ou de true 
+verifier multiplede3et5(n = 11) retourne false
+verifier multiplede3et5(n = 199) retourne false
+
+---
+
+## Q6d 
+
+Est-il possible d'écrire un test qui teste tous les cas possibles pour la méthode interne ? L'a t'on fait ? Développer pourquoi en quelques phrases.
+
+Oui il est possible d'ecrire un test qui couvre tous les cas possible pour la methode interne.
+Oui nous l'avons fait. 
+Nous pouvons couvrir tous les cas parce que le cadrage de cette fonction est très serrée. 
+Premièrement nous couvrant un intervalle entre deux nombre assez proche 1 et 199
+Deuxiement nous connaissons tous les multiple de 3 et de 5 donc nous pouvons tous les tester.
+voici pourquoi nous pouvons tout tester. 
+
+---
+
+
+# Q7
+
+Un site Web Comporte 3 pages, HOME, PAGE 1, PAGE 2. Lorsque une mauvaise url sur le bon domaine est entrée, le navigateur est redirigé vers la page HOME.
+
+## Q7a
+
+Proposer un test automatisable vérifiant que chaque page est en ligne et 
+que l'ont peut aller avec un lien de Home a page 1, de page 1 à page 2, et des pahes 1 et 2 vers home. 
+
+## Q7b
+
+Proposer au moins un test verifiant que la redirection marche bien.
+
+1-user entrer la mauavse adresse mais dans le bon domaine dans la plage url du navigateur
+1-a : l'utilisateur est redirigé vers la page HOME
+2-le navigateur affiche la page home du site Web
+3-sur la page home on voit afficher un lien 
+4-ce lien est le suivant et est en blue : "page 1"
+5-en cliquant sur ce lien l'utilisateur est dirigé vers la page 1
+6-la page 1 du site web s'affiche
+7-on trouve sur la page 1 un lien ou c'est écrit "page 2"
+8-on clique sur ce lien il nous guide vers la page 2
+9-on arrivant sur la page 2, on voit un lien ou c'est écrit "home"
+10-on clique sur le lien "home"
+11-on est dirigé vers la page home. 
+12-l'utilisateur entre la mauvaise url avec le mauvais domaine 
+13-le navigateur affiche error 404 aucune adresse ne correspond
+
+---
+
+# Q8
+
+Une classe Personne possède un attribue de type entier représentant son âge en année. 
+Il existe une methode Veillir(entier nombreAnnee) qui permet de faire veillir une personne mais jamais rajeunir. 
+
+Écrire un panel de tests unitaire pour cette méthode en essayant de couvrir un maximum de cas.
+
+verifier Veillir(-1) retourne exception "nombreAnnee doit etre strictement superieur à 0"
+verifier Veillir(10) retourne age + 10 
+verifier Veillir(100) retourne age + 100
+verifier Veillir(1000) retourne exception "nombreAnnee est trop élevé"
+verifier Veillir(0) retourne exception "nombreAnnee doit etre strictement superieur à 0"
+verifier Veillir(0.1) retourne age + 0.1
+verifier Veillir() retourne exception "veillir prend en paramètre un nombre"
+verifier Veillir(10, 10) retourne exception "veillir prend en paramètre un seul nombre"
+
+
+---
+
+
+
+# Q9
+
+Une classe Elfe possède un attribue de type entier représentant son âge en année. Elle possède également un attribu de type booléen EtreEnStase.
+Un Elfe nouvellement créee à forcément un age valant zero et ne nais jamais en stase. 
+En plus de la méthode Veillir(entier) il existe une méthode Rajeunir(entier) qui à le fonctionnement inverse.
+Il existe également une méthode EntrerEnStase() qui comme son nom l'indique fait rentrer l'elfe en stase. 
+Il existe également une méthode SortirDeStase() qui permet d'en sortir.
+Un elfe en état de stase ne peux plus veillir ou rajeunir.
+Une fois qu'un elfe atteinte 999 ans, il atteint l'état de stase et ne peux plus en sortir.
+
+Proposez un ensemble de tests qui d'après vous permette de garantir le bon fonctionnement de la classe Elfe et de ses méthodes.
+
+verifier Veillir(-1) retourne exception "nombreAnnee doit etre strictement superieur à 0"
+verifier Veillir(10) et que age = 100 et que EtreEnStase = true retourne age + 10 verifier que age = 110
+verifier Veillir(100) retourne age + 100
+verifier Veillir(999) et que age = 0  retourne + 999
+verifier Veillir(999) et que age = 100  retourne "Elfe en etat de stase"
+verifier Veillir(1000) retourne exception "Elfe en etat de stase"
+verifier Veillir(0) retourne exception "nombreAnnee doit etre strictement superieur à 0"
+verifier Veillir(0.1) retourne age + 0.1
+verifier Veillir() retourne exception "veillir prend en paramètre un nombre"
+verifier Veillir(10, 10) retourne exception "veillir prend en paramètre un seul nombre"
+
+verifier Rajeunir(0) retourne "elfe a le meme age"
+verifier Rajeunir(-10) retourne "nombreAnnee est strictement positif"
+verifier Rajeunir(10) et que age = 100 et que EtreEnStase = true retourne age - 10 verifier que age = 90
+verifier Rajeunir(1000) alors que age = 200 retourne "nombreAnnee doit etre strictement inférieur à age"
+
+
+verifier EntrerEnStase() retourne EtreEnStase = true;
+verifier SortirDeStase() retourne EtreEnStase = false;
+
+verifier si EtreEnStase = true et verifier Rajeunir(10) retourne  "impossible votre elfe est en etat de stase"
+verifier si EtreEnStase = true et verifier Veillir(10) retourne  "impossible votre elfe est en etat de stase"
+
+
+---
+
+
+# Q10
+
+Choisissez un jeu vidéo (si possible quelque chose que je connaisse) et imaginez que vous soyez charger de garantir la non regression du jeu pour les développement à venir. 
+Proposer un plan de tests le plus large possible en essayant d'atteindre le plus de domaines possibles. Vous pouvez au choix proposer des scénario longs ou des scénarios courts plus nombreux.
+
+
+Test unitaire de non regression du jeu Destiny 2. Le joueur ouvre l'inventaire de son personnage pour choisir une arme, ou changer d'arme actuelle. 
+1- il clique sur le bouton select de la manette sur l'inventaire du joueur s'ouvre.
+2- l'inventaire dresse la liste de toutes ses armes sous l'onglet arme principale. 
+3- l'inventaire dresse aussi les explosives, les armes de poing, et les autres types d'armes sous d'autres onglets.
+4- sous l'onglet arme principale, il y a la liste de toutes les armes principales du jeu.
+5- les armes principales se divisent en trois parties :
+5-a: les armes sont inconnues du joueur elles sont à un emplacement noirci et non visible (la forme de l'arme est inconnue)
+5-b: les armes sont grisées si le joueur les a découvertes mais n'e les a pas dans son inventaire
+5-c: les armes sont en couleur et en surbrillance si elles sont dans l'inventaire du joueur et qu'il peut les changer 
+6- le passage sur les différents type d'armes avec le joyestique ou les fleches de la manette :
+6-a: au passage sur les armes inconnue le joueur ne peut rien faire et si il essaye de les choisir un message s'affiche au centre de l'écran pour dire " arme inconnue"
+6-b: au passage sur les armes grisées le joueur ne peut pas les choisir et si il essaye de les choisir un message s'affiche au centre de l'écran pour dire "pas dans l'inventaire"
+6-c: au passage sur les armes de l'inventaire disponibles le joueur peut selectionner l'arme qu'il souhaite donner à son personnage 
+7- Le joueur a désormais la possibilité d'avoir deux armes principales sur l'utilisateur (nouvelle fonctionnalité)
+8- il choisi sa première arme alors une bordure jaune vient autour de la première arme selectionnée et un message s'affiche sur l'écran "premiere arme principale"
+9- ensuite il navigue dans son inventaire pour choisir sa seconde arme 
+10- il choisi une deuxieme arme principale, à la selection un message s'affiche sur l'écran : " deuxieme arme principale "  et une bordure jaune vient autour de l'arme selectionnée
+11- si le joueur appuie sur X il sort de l'écran inventaire et revient dans le jeu
+12- le joueur se retrouve avec les 'armes qu'il a choisi depuis son inventaire entre les mains de son personnage
+13- il peut changer d'arme en double cliquant sur B pour passer d'une arme à une autre
+
+---
+

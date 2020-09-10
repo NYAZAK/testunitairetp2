@@ -1,0 +1,12 @@
+test estinferieuradix(entier a) retourne un boolean
+verifier estinferieuradix 7 retourne true
+verifier estinferieuradix 11 retourne true
+
+verifier estinferieuradix 
+verifier estinferieuradix -7 leve exception (a doit etre positif)
+verifier estinferieuradix 0  leve exception (a doit etre strictement positif)
+verifier estinferieuradix int.MaxValue
+verifier estinferieuradix 10 
+verifier estinferieuradix -int.MinValue
+verifier estinferieuradix -0
+verifier que racinecarrée de 2^32 vaut a peu pres 345 
